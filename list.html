@@ -227,6 +227,24 @@
     </div>
     <!-- 导包template -->
     <script src="./js/template-web.js"></script>
+
+    <script>
+        $('.search_btn').click(function () {
+            $.ajax({
+                url: 'http://localhost:8080/api/v1/index/search',
+                type: 'get',
+                dataType: 'json',
+                data: {
+                    key: $('.search_txt').val(),
+                    page: 1,
+                    perpage: 10
+                },
+                success: function (backData) {
+
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>
